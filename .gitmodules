@@ -1,3 +1,4 @@
 [submodule "solana-starter"]
     path = solana-starter
-    url = https://github.com/dodaa08/Q3_25_Builder_KARTIK.git
+    url = https://github.com/solana-turbin3/solana-starter.git
+    
