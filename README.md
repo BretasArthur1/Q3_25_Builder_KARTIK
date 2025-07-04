@@ -2,14 +2,6 @@
 
 My proof-of-work for the Solana Turbin3 Q3 Builder Program.
 
-## Setup
-
-```bash
-npm install
-anchor build
-anchor test
-```
-
 ## Projects
 
 - TypeScript client implementations
