@@ -1,5 +1,7 @@
 [submodule "solana-starter"]
     path = solana-starter
     url = https://github.com/solana-turbin3/solana-starter.git
+
+[submodule "vault"]
     path = vault
-    url = https://github.com/solana-turbin3/
+    url = https://github.com/solana-turbin3/vault.git
