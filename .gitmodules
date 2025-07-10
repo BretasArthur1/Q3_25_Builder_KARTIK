@@ -2,4 +2,4 @@
     path = solana-starter
     url = https://github.com/solana-turbin3/solana-starter.git
      path = vault
-     url = https://github.com/solana-turbin3/vault.git
+     url = https://github.com/solana-turbin3/vault @ 05b0494
