@@ -5,5 +5,5 @@ target
 node_modules
 test-ledger
 .yarn
-wallet.json
-/cli
+cli
+wallet
