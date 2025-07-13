@@ -1,29 +1,55 @@
 # Turbin3 Q3 Builder Program
 
-My proof-of-work for the Solana Turbin3 Q3 Builder Program.
+My proof-of-work for the Solana Turbin3 Q3 Builder Program - a comprehensive journey into Solana development with Rust and TypeScript.
 
-## Projects
+## Program Overview
 
-- TypeScript client implementations
-- Anchor program development
-- Solana token & NFT programs
-- DeFi protocol integrations
+The Turbin3 Q3 Builder Program is an intensive cohort focused on building production-ready applications on the Solana blockchain. This repository contains my implementations and learnings throughout the program.
 
-Built with Rust, TypeScript, and Anchor on Solana.
+## Completed Work
 
-## Deployed Programs
+### Prerequisites
+- Solana development environment setup
+- Rust fundamentals for blockchain development
+- TypeScript client configuration
+- Anchor framework introduction
 
-### Vault Program
-- **Program ID**: `Hv5rGT2D4s2DrMUqGbMbXxD7cviCTYrzYXD3zPN7bHyG`
-- **Networks**: Localnet, Devnet
-- **Keypair**: `vault/target/deploy/vault-keypair.json`
+### Token & NFT Programs
+- SPL Token program implementation
+- NFT minting mechanisms
+- Metadata handling and storage
+- Token distribution strategies
 
-### WBA Programs
-- **WBA Vault**: `D51uEDHLbWAxNfodfQDv7qkp8WZtxrhi3uganGbNos7o`
-- **WBA Prereq**: `HC2oqz2p6DEWfrahenqdq2moUcga9c9biqRBcdK3XKU1`
+### Automated Market Maker (AMM)
+- Liquidity pool creation
+- Swap functionality implementation
+- Price calculation algorithms
+- Fee structure integration
 
-### Turbin3 Programs
-- **Turbin3 Prereq**: `TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM`
+### Vault System
+- Secure asset storage mechanisms
+- Access control implementations
+- Withdrawal and deposit logic
+- Multi-signature capabilities
 
-### Configuration
-All program configurations can be found in `Anchor.toml`. The vault program is configured for both localnet and devnet deployments.
+## Tech Stack
+
+- **Rust** - Core program development
+- **TypeScript** - Client-side implementations
+- **Anchor** - Solana development framework
+- **Solana Web3.js** - Blockchain interactions
+
+## Upcoming Modules
+
+More advanced topics and protocols will be covered as the program progresses, including additional DeFi integrations and advanced Solana concepts.
+
+## Repository Structure
+
+```
+├── programs/          # Rust Anchor programs
+├── app/              # TypeScript client applications
+├── tests/            # Program tests and validations
+└── docs/             # Documentation and guides
+```
+
+Built with 🦀 Rust and ⚡ Solana
