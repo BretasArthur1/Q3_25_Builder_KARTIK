@@ -41,6 +41,4 @@ My proof-of-work for the Solana Turbin3 Q3 Builder Program
 - **Anchor** - Solana development framework
 - **Solana Web3.js** - Blockchain interactions
 
-```
-
-Built with 🦀 Rust and ⚡ Solana
+Built with �� Rust and ⚡ Solana
