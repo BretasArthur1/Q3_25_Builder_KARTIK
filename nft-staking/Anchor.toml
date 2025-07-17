@@ -4,14 +4,14 @@
 seeds = false
 skip-lint = false
 
-[programs.devnet]
-escrow1 = "FXtW7PAK8KtFKBsBiyFMK2BrrU8dt9gHPzoVrBDNkWgf"
+[programs.localnet]
+nft_staking = "4BGAeWBHxqo3yGiGgViGQaCkXA9Xbb5HQzn4oAKf2U1V"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
+cluster = "Localnet"
 wallet = "/home/kartik/.config/solana/id.json"
 
 [scripts]
