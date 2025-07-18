@@ -1,12 +1,12 @@
-use crate::states::*;
-use std::alloc::System;
+use crate::state::*;
+use crate::error::CustomError;
 
 use anchor_lang::prelude::*;
 
 // we are dealing with the tokens.
 use anchor_spl::{
    associated_token::AssociatedToken,
-   token::{transfer, Mint, Token, TokenAccount, Transfer}
+   token::{mint_to, transfer, Mint, Token, TokenAccount, Transfer, MintTo}
 };
 
 // basically init account for everything here as the name suggests.. 
@@ -41,10 +41,12 @@ pub struct Unstake<'info>{
 
     pub config : Account<'info, StakeConfig>,
 
+    pub nft_mint: Account<'info, Mint>,
+
     #[account(
         mut,
         seeds = [b"rewards", config.key().as_ref()],
-        bump = config.rewards_bump
+        bump = config.reward_bump
     )]
 
     pub rewards_mint : Account<'info, Mint>,
@@ -56,7 +58,7 @@ pub struct Unstake<'info>{
         associated_token::authority = admin
     )]
 
-    pub user_reward_ata : Account<'info, TokenAccounte>,
+    pub user_reward_ata : Account<'info, TokenAccount>,
 
 
     // reqs.. 
@@ -65,9 +67,9 @@ pub struct Unstake<'info>{
     pub token_program : Program<'info, Token>,
 }
 
-impl<'info> Claim<'info>{
+impl<'info> Unstake<'info>{
     
-    pub fn claim(&mut self) -> Result<()> {
+    pub fn unstake(&mut self) -> Result<()> {
         let amount = self.user_account.points;
 
         require!(amount>0, CustomError::NoRewardsToClaim);

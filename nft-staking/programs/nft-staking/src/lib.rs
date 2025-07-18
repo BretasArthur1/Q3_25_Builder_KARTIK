@@ -13,37 +13,30 @@ declare_id!("4BGAeWBHxqo3yGiGgViGQaCkXA9Xbb5HQzn4oAKf2U1V");
 
 #[program]
 pub mod nft_staking {
-    use std::task::Context;
-
     use super::*;
 
-    pub fn initalize_config(ctx : Context<initializeConfig>, points_per_stake : u8, freeze_period : u8, max_unstake: u8)-> Result<()>{
-        ctx.accounts.initializeConfig(
+    pub fn initialize_config(ctx: Context<InitializeConfig>, points_per_stake: u8, freeze_period: u8, max_unstake: u8) -> Result<()> {
+        ctx.accounts.initialize_config(
             points_per_stake,
             max_unstake,
             freeze_period,
             ctx.bumps   
-        );
-        Ok(())
+        )
     }
 
-    pub fn initialize_user(ctx: Context<InitializeUser>, ) -> Result<()> {
-        ctx.accounts.inittializeUser(ctx.bumps);
-        Ok(())
+    pub fn initialize_user(ctx: Context<InitializeUser>) -> Result<()> {
+        ctx.accounts.initialize_user(ctx.bumps)
     }
 
-    pub fn stake(ctx: Context<Staker>) -> Result<()> {
-        ctx.accounts.stake(ctx.bumps);
-        Ok(())
+    pub fn stake(ctx: Context<Stake>) -> Result<()> {
+        ctx.accounts.stake(ctx.bumps)
     }
 
     pub fn unstake(ctx: Context<Unstake>) -> Result<()> {
-        ctx.accounts.unstake();
-        Ok(())
+        ctx.accounts.unstake()
     }
 
     pub fn claim(ctx: Context<Claim>) -> Result<()> {
-        ctx.accounts.claim();
-        Ok(())
+        ctx.accounts.claim(ctx.bumps)
     }
 }

@@ -1,12 +1,9 @@
 use anchor_lang::prelude::*;
 
 #[account]
-#[drive(
-    InitSpace
-)]
-
+#[derive(InitSpace)]
 pub struct UserAccount{
-    pub points : u32,
-    pub amount_staked : u8,
-    pub bump : u8
+    pub points: u32,
+    pub amount_staked: u8,
+    pub bump: u8
 }
