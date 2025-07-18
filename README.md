@@ -49,6 +49,10 @@ turbine3/
 - **Anchor** - Solana development framework
 - **Solana Web3.js** - Blockchain interactions
 
+## Getting Started
+
+Each program directory contains its own build and deployment scripts. Navigate to the specific program directory to build and test individual programs.
+
 ---
 
 *This README is automatically generated. Run `node generate-readme.js` to update.*
