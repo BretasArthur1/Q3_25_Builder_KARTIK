@@ -18,7 +18,7 @@ use anchor_spl::token::{
 
 
 #[derive(Accounts)]
-pub struct initializeConfig<'info>{
+pub struct InitializeConfig<'info>{
 
     #[account(mut)]
     pub admin : Signer<'info>,
@@ -28,7 +28,7 @@ pub struct initializeConfig<'info>{
         payer = admin,
         seeds = [b"config"],
         bump,
-        space : 8 + StakeConf   ig::INIT_SPACE,
+        space = 8 + StakeConfig::INIT_SPACE,
     )]
     pub config : Account<'info, StakeConfig>,
 
@@ -49,8 +49,8 @@ pub struct initializeConfig<'info>{
 
 }
 
-impl<'info> initializeConfig<'info>{
-    pub fn initializeConfig(
+impl<'info> InitializeConfig<'info>{
+    pub fn initialize_config(
         &mut self,
         points_per_stake : u8,
         max_unstake : u8,

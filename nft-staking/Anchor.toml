@@ -1,17 +1,18 @@
 [toolchain]
+package_manager = "yarn"
 
 [features]
 seeds = false
 skip-lint = false
 
-[programs.localnet]
-nft_staking = "4BGAeWBHxqo3yGiGgViGQaCkXA9Xbb5HQzn4oAKf2U1V"
+[programs.devnet]
+nft_staking = "FXtW7PAK8KtFKBsBiyFMK2BrrU8dt9gHPzoVrBDNkWgf"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "/home/kartik/.config/solana/id.json"
 
 [scripts]

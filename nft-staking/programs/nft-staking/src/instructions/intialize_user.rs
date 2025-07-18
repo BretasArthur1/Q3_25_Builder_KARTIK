@@ -1,4 +1,4 @@
-use crate::states::*;
+use crate::{states::*, UserAccount};
 use anchor_lang::prelude::*;
 
 // basically init account for everything here as the name suggests.. 
@@ -8,7 +8,7 @@ use anchor_lang::prelude::*;
 
 
 #[derive(Accounts)]
-pub struct initializeUser<'info>{
+pub struct InitializeUser<'info>{
 
     #[account(mut)]
     pub admin : Signer<'info>,
@@ -16,24 +16,24 @@ pub struct initializeUser<'info>{
     #[account(
         init,
         payer = admin,
-        seeds = [b"user",  user.key().as_ref()],
+        seeds = [b"user",  admin.key().as_ref()],
         bump,
         space = 8 + UserAccount::INIT_SPACE
     )]
-    pub user_account : Account<'info, UserAccount>,  // ?
+    pub user_account : Account<'info, UserAccount>,
 
-    pub system_account : Program<'info, System>,
+    pub system_program : Program<'info, System>
 
 }
 
-impl<'info> initializeUser<'info>{
+impl<'info> InitializeUser<'info>{
 
-    pub fn initialize_user (&mut self, bump : initializeUserBumps ) -> Result<()> {
+    pub fn initialize_user (&mut self, bump : InitializeUserBumps ) -> Result<()> {
        
         self.user_account.set_inner(UserAccount{
             points : 0,
             amount_staked : 0,
-            bump : bump.user_account
+            bump : bumps.user_account
         });
 
         Ok(())
