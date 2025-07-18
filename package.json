@@ -1,0 +1,11 @@
+{
+  "name": "turbine3-workspace",
+  "version": "1.0.0",
+  "description": "Turbin3 Q3 Builder Program workspace",
+  "scripts": {
+    "update-readme": "node generate-readme.js"
+  },
+  "keywords": ["solana", "blockchain", "turbin3", "anchor"],
+  "author": "Your Name",
+  "license": "MIT"
+} 

@@ -2,43 +2,53 @@
 
 My proof-of-work for the Solana Turbin3 Q3 Builder Program
 
-## Completed Work
+## Programs
 
-### Prerequisites
-- Solana development environment setup
-- Rust fundamentals for blockchain development
-- TypeScript client configuration
-- Anchor framework introduction
+This workspace contains the following Solana programs:
 
-### Token & NFT Programs
-- SPL Token program implementation
-- NFT minting mechanisms
-- Metadata handling and storage
-- Token distribution strategies
+### escrow1
+- **Directory**: `escrow1/`
+- **Program ID**: `FXtW7PAK8KtFKBsBiyFMK2BrrU8dt9gHPzoVrBDNkWgf`
+- **Description**: Trustless escrow system for secure asset exchange
 
-### Automated Market Maker (AMM)
-- Liquidity pool creation
-- Swap functionality implementation
-- Price calculation algorithms
-- Fee structure integration
+### nft_staking
+- **Directory**: `nft-staking/`
+- **Program ID**: `FXtW7PAK8KtFKBsBiyFMK2BrrU8dt9gHPzoVrBDNkWgf`
+- **Description**: NFT staking mechanism with reward distribution
 
-### Vault System
-- Secure asset storage mechanisms
-- Access control implementations
-- Withdrawal and deposit logic
+### Solana Starter
+- **Directory**: `solana-starter/`
+- **Description**: Starter templates and utilities for Solana development
 
-### Escrow Program
-- Trustless asset exchange mechanisms
-- Conditional transaction execution
-- Multi-party agreement protocols
-- Automated settlement systems
+### Turbin3 Prerequisites
+- **Directory**: `Turbin3-prereqs/`
+- **Program ID**: `TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM`
+- **Description**: Program prerequisites and enrollment system for Turbin3
 
+### vault1
+- **Directory**: `vault/`
+- **Program ID**: `BHXfw6zfZcJ8grDZZFacT55YYgCb5JciVqCaDydG6MqK`
+- **Description**: Secure vault system for asset storage and management
+
+## Project Structure
+
+```
+turbine3/
+├── Turbin3-prereqs/
+├── escrow1/
+├── nft-staking/
+├── solana-starter/
+├── vault/
+└── README.md
+```
 
 ## Tech Stack
 
 - **Rust** - Core program development
-- **TypeScript** - Client-side implementations
+- **TypeScript** - Client-side implementations  
 - **Anchor** - Solana development framework
 - **Solana Web3.js** - Blockchain interactions
 
-Built with �� Rust and ⚡ Solana
+---
+
+*This README is automatically generated. Run `node generate-readme.js` to update.*
