@@ -12,6 +12,7 @@ turbine3/
 ├── nft-staking/
 ├── solana-starter/
 ├── vault/
+├── capestone/
 └── README.md
 ```
 
