@@ -1,5 +1,6 @@
 [toolchain]
 package_manager = "yarn"
+solana_version = "1.18.26"
 
 [features]
 seeds = false

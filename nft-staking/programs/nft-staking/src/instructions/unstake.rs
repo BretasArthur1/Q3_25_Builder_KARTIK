@@ -5,8 +5,7 @@ use anchor_lang::prelude::*;
 
 // we are dealing with the tokens.
 use anchor_spl::{
-   associated_token::AssociatedToken,
-   token::{mint_to, transfer, Mint, Token, TokenAccount, Transfer, MintTo}
+   token::{mint_to, Mint, Token, TokenAccount, MintTo}
 };
 
 // basically init account for everything here as the name suggests.. 
@@ -41,8 +40,6 @@ pub struct Unstake<'info>{
 
     pub config : Account<'info, StakeConfig>,
 
-    pub nft_mint: Account<'info, Mint>,
-
     #[account(
         mut,
         seeds = [b"rewards", config.key().as_ref()],
@@ -54,16 +51,14 @@ pub struct Unstake<'info>{
    
     #[account(
         mut,
-        associated_token::mint = nft_mint,
+        associated_token::mint = rewards_mint,
         associated_token::authority = admin
     )]
 
     pub user_reward_ata : Account<'info, TokenAccount>,
 
-
     // reqs.. 
     // sequeze out the tokens... 
-
     pub token_program : Program<'info, Token>,
 }
 
@@ -75,7 +70,7 @@ impl<'info> Unstake<'info>{
         require!(amount>0, CustomError::NoRewardsToClaim);
 
         let seeds : &[&[u8]] = &[b"config", &[self.config.bump]];
-        let signer =        &[seeds];
+        let signer = &[seeds];
 
         let cpi_account = MintTo{
             mint : self.rewards_mint.to_account_info(),
@@ -83,11 +78,16 @@ impl<'info> Unstake<'info>{
             authority : self.config.to_account_info()
         };
 
-        let cpi_ctx = CpiContext::new_with_signer(self.token_program.to_account_info(), cpi_account, signer);
-        mint_to(cpi_ctx , amount.into());
-        
-        self.user_account.points = 0; // reward has been claimed !
+        let cpi_ctx = CpiContext::new_with_signer(
+            self.token_program.to_account_info(),
+            cpi_account,
+            signer
+        );  
 
+        mint_to(cpi_ctx, amount.into());
+
+        self.user_account.points = 0;
+        
         Ok(())
     }
 

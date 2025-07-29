@@ -37,6 +37,8 @@ pub mod nft_staking {
     }
 
     pub fn claim(ctx: Context<Claim>) -> Result<()> {
-        ctx.accounts.claim(ctx.bumps)
+        ctx.accounts.claim()
     }
 }
+
+
