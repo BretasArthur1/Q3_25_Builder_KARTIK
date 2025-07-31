@@ -1,13 +1,12 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { Escrow1 } from "../target/types/escrow1";
+import { NftMarketplace } from "../target/types/nft_marketplace";
 
-
-describe("escrow1", () => {
+describe("nft-marketplace", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.Escrow1 as Program<Escrow1>;
+  const program = anchor.workspace.nftMarketplace as Program<NftMarketplace>;
 
   it("Is initialized!", async () => {
     // Add your test here.
